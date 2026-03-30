@@ -37,9 +37,7 @@ jobs:
         run: npm install sass --ignore-scripts --legacy-peer-deps
 
       - name: Build Angular app
-        run: NODE_OPTIONS="--max-old-space-size=4096 --openssl-legacy-provider" ./node_modules/@angular/cli/bin/ng build --prod
-        env:
-          NODE_OPTIONS: "--max-old-space-size=4096 --openssl-legacy-provider"
+        run: NODE_OPTIONS="--max-old-space-size=4096" ./node_modules/@angular/cli/bin/ng build --prod
 
       - name: Log in to GHCR
         uses: docker/login-action@v3
