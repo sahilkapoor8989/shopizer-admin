@@ -30,7 +30,7 @@ jobs:
             node_modules/sass-loader/dist/utils.js
 
       - name: Install compatible packages
-        run: npm install sass angular-file@3.3.0 @types/jquery@3.5.5 --legacy-peer-deps --ignore-scripts
+        run: npm install sass angular-file@3.3.0 @types/jquery@3.5.5 @types/minimatch@3.0.5 --legacy-peer-deps --ignore-scripts
 
       - name: Build
         run: NODE_OPTIONS="--max-old-space-size=4096" npm run build
