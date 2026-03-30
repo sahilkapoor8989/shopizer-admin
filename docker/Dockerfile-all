@@ -1,10 +1,10 @@
 # build env
-FROM node:12.8.0 as builder
+FROM node:14-buster as builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm install
+COPY package.json ./
+RUN npm install --ignore-scripts
 COPY . .
 
 # Build Angular Application in Production
